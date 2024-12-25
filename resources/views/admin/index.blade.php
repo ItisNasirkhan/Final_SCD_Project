@@ -1,3 +1,6 @@
+@extends('home.index')
+
+@section('content')
 <div class="d-flex flex-row-reverse p-2">
     <input type="text" class="form-control" id="product-search" placeholder="Search by name or price">
 </div>
@@ -5,6 +8,7 @@
     <!-- AJAX search results will appear here -->
 </ul>
 
+<a href="{{route('admin.create')}}" class = 'btn btn-primary'>Create Product</a>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -12,6 +16,7 @@
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
+            <th>Category</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -22,6 +27,7 @@
             <td>{{ $product->name }}</td>
             <td>{{ $product->price }}</td>
             <td>{{ $product->quantity }}</td>
+            <td>{{ $product['category']['name'] }}</td>
             <td>
                 <a href="{{ route('admin.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
                 <a href="{{ route('admin.show', $product->id) }}" class="btn btn-info btn-sm">Show</a>
@@ -35,3 +41,4 @@
         @endforeach
     </tbody>
 </table>
+@endsection

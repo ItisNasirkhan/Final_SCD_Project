@@ -12,7 +12,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::with('category')->get();
         return view('admin.index', compact('products'));
     }
 
@@ -35,13 +35,14 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
             'quantity' => 'required|integer',
+            'categorie_id' => 'required',
         ]);
 
-        Product::create($request->all());
+        Product::create($data);
 
         return redirect()->route('admin.index')->with('success', 'Product created successfully.');
     }
@@ -60,14 +61,15 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $data = $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
-            'quantity' => 'required|integer',
+            'quantity' => 'required|integer',   
+            'categorie_id' => 'required',
         ]);
 
         $product = Product::findOrFail($id);
-        $product->update($request->all());
+        $product->update($data);
 
         return redirect()->route('admin.index')->with('success', 'Product updated successfully.');
     }

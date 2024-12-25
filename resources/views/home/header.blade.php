@@ -15,7 +15,7 @@
                     </a> 
 
                     <div class="search-container" style="position: relative;">
-    <input type="text" id="search-bar" class="form-control" placeholder="Search for services..." autocomplete="off">
+    <input type="text" id="search-bar" class="form-control" placeholder="Search for products..." autocomplete="off">
     <ul id="search-results" class="dropdown-menu" style="display: none; position: absolute; top: 100%; left: 0; z-index: 1000; width: 100%;">
         <!-- AJAX results will be displayed here -->
     </ul>

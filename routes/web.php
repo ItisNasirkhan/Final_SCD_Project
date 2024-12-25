@@ -28,50 +28,50 @@ Route::get('/dashboard', function () {
 
 
 // Index (List all resources)
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+// Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
-// Create (Show form to create a new resource)
-Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
+// // Create (Show form to create a new resource)
+// Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
 
-// Store (Handle the form submission and save the new resource)
-Route::post('/admin', [AdminController::class, 'store'])->name('admin.store');
+// // Store (Handle the form submission and save the new resource)
+// Route::post('/admin', [AdminController::class, 'store'])->name('admin.store');
 
-// Show (Display a single resource)
-Route::get('/admin/{id}', [AdminController::class, 'show'])->name('admin.show');
+// // Show (Display a single resource)
+// Route::get('/admin/{id}', [AdminController::class, 'show'])->name('admin.show');
 
-// Edit (Show form to edit an existing resource)
-Route::get('/admin/{id}/edit', [AdminController::class, 'edit'])->name('admin.edit');
+// // Edit (Show form to edit an existing resource)
+// Route::get('/admin/{id}/edit', [AdminController::class, 'edit'])->name('admin.edit');
 
-// Update (Handle the form submission and update the resource)
-Route::put('/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
+// // Update (Handle the form submission and update the resource)
+// Route::put('/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
 
-// Destroy (Delete a resource)
-Route::delete('/admin/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+// // Destroy (Delete a resource)
+// Route::delete('/admin/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
 
+Route::resource('admin', AdminController::class);
 
+// // Index (List all resources)
+// Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
-// Index (List all resources)
-Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
+// // Create (Show form to create a new resource)
+// Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 
-// Create (Show form to create a new resource)
-Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+// // Store (Handle the form submission and save the new resource)
+// Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
 
-// Store (Handle the form submission and save the new resource)
-Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+// // Show (Display a single resource)
+// Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('categories.show');
 
-// Show (Display a single resource)
-Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('categories.show');
+// // Edit (Show form to edit an existing resource)
+// Route::get('/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
 
-// Edit (Show form to edit an existing resource)
-Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+// // Update (Handle the form submission and update the resource)
+// Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
 
-// Update (Handle the form submission and update the resource)
-Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
+// // Destroy (Delete a resource)
+// Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
-// Destroy (Delete a resource)
-Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
-
-
+Route::resource('categories', CategoryController::class);
 
 
 Route::get('/product/search', [AdminController::class, 'searchServices'])->name('product.search');
