@@ -28,7 +28,7 @@ Route::get('/dashboard', function () {
 
 
 // Index (List all resources)
-// Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 // // Create (Show form to create a new resource)
 // Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
@@ -53,8 +53,8 @@ Route::resource('admin', AdminController::class);
 // // Index (List all resources)
 // Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
-// // Create (Show form to create a new resource)
-// Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+// Index (List all resources)
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
 
 // // Store (Handle the form submission and save the new resource)
 // Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
@@ -74,9 +74,8 @@ Route::resource('admin', AdminController::class);
 Route::resource('categories', CategoryController::class);
 
 
-Route::get('/product/search', [AdminController::class, 'searchServices'])->name('product.search');
 
-
+Route::get('/search', [AdminController::class, 'search'])->name('search');
 
 
 

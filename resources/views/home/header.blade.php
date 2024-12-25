@@ -14,13 +14,7 @@
                     <a href="cart.html" id="lg-bag"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     </a> 
 
-                    <div class="search-container" style="position: relative;">
-    <input type="text" id="search-bar" class="form-control" placeholder="Search for products..." autocomplete="off">
-    <ul id="search-results" class="dropdown-menu" style="display: none; position: absolute; top: 100%; left: 0; z-index: 1000; width: 100%;">
-        <!-- AJAX results will be displayed here -->
-    </ul>
-</div>
-
+                    <input type="text" placeholder="search" id="search"> 
 
                     <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                     <a href="#" id="close"><button type="button" class="btn-close" aria-label="Close"></button></a>

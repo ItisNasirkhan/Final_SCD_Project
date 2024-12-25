@@ -1,6 +1,3 @@
-@extends('home.index')
-
-@section('content')
 <div class="d-flex flex-row-reverse p-2">
     <input type="text" class="form-control" id="product-search" placeholder="Search by name or price">
 </div>
@@ -41,4 +38,3 @@
         @endforeach
     </tbody>
 </table>
-@endsection
